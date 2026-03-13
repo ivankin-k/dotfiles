@@ -1,0 +1,10 @@
+{
+    "workbench.sideBar.location": "right",
+    "editor.unicodeHighlight.allowedLocales": {
+        "ru": true
+    },
+    "http.proxy": "socks://127.0.0.1:20170",
+    "editor.formatOnSave": true,
+    "rest-client.previewOption": "exchange",
+    "outline.collapseItems": "alwaysCollapse"
+}
