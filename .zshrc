@@ -1,3 +1,4 @@
+# Greet
 print -n -P '%F{cyan}'
 printf '%s' '
                        __        _                                     
@@ -33,3 +34,6 @@ alias l='eza -aagl --time-style "+%H:%M %d %b %Y"'
 
 # Go path
 [[ -d /usr/local/go/bin ]] && export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+
+# Opts
+setopt autocd
