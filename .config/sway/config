@@ -230,3 +230,8 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+set $ws1 "1:Web"
+
+bindsym $mod+1 workspace $ws1
+
