@@ -33,10 +33,6 @@ alias l='eza -aagl --time-style "+%H:%M %d %b %Y"'
 
 # History
 HISTFILE=~/.zhistory
-HISTSIZE=1000
-SAVEHIST=1000
-setopt APPEND_HISTORY
-setopt SHARE_HISTORY
 
 # Go path
 [[ -d /usr/local/go/bin ]] && export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
@@ -44,4 +40,3 @@ setopt SHARE_HISTORY
 # Prompt
 setopt COMPLETE_ALIASES
 setopt AUTO_CD
-setopt AUTO_LIST
