@@ -30,6 +30,7 @@ fi
 
 # Aliases
 alias l='eza -aagl --time-style "+%H:%M %d %b %Y"'
+alias pacman='pacman --color auto'
 
 # History
 HISTFILE=~/.zhistory
