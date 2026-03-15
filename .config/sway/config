@@ -116,31 +116,31 @@ output * bg /usr/share/backgrounds/captaincacao/WallpaperDog-10872696.jpg fill
 # Workspaces:
 #
     # Name workspaces
-    set $ws1 "1:Web"
-    set $ws2 "2:Personal"
-    set $ws4 "4:Terminal"
-    set $ws5 "5:Dev"
+    set $wsWeb      "1:Web"
+    set $wsPersonal "2:Personal"
+    set $wsTerminal "4:Terminal"
+    set $wsDev      "5:Dev"
 
     
     # Place workspaces
-    workspace $ws1 output DP-1
-    workspace $ws2 output DP-1
-    workspace $ws4 output HDMI-A-2
-    workspace $ws5 output HDMI-A-2
+    workspace $wsWeb      output DP-1
+    workspace $wsPersonal output DP-1
+    workspace $wsTerminal output HDMI-A-2
+    workspace $wsDev      output HDMI-A-2
 
     # Switch to workspace
-    bindsym $mod+KP_1 workspace $ws1
-    bindsym $mod+KP_2 workspace $ws2
-    bindsym $mod+KP_4 workspace $ws4
-    bindsym $mod+KP_5 workspace $ws5
+    bindsym $mod+KP_1 workspace $wsWeb
+    bindsym $mod+KP_2 workspace $wsPersonal
+    bindsym $mod+KP_4 workspace $wsTerminal
+    bindsym $mod+KP_5 workspace $wsDev
     #bindsym $mod+3 workspace number 3
     #bindsym $mod+4 workspace number 4
     
     # Move focused container to workspace
-    bindsym $mod+Shift+KP_End move container to workspace $ws1
-    bindsym $mod+Shift+KP_Down move container to workspace $ws2
-    bindsym $mod+Shift+KP_Left move container to workspace $ws4
-    bindsym $mod+Shift+KP_Begin move container to workspace $ws5
+    bindsym $mod+Shift+KP_End move container to workspace $wsWeb
+    bindsym $mod+Shift+KP_Down move container to workspace $wsPersonal
+    bindsym $mod+Shift+KP_Left move container to workspace $wsTerminal
+    bindsym $mod+Shift+KP_Begin move container to workspace $wsDev
     #bindsym $mod+Shift+3 move container to workspace number 3
     #bindsym $mod+Shift+4 move container to workspace number 4
     
@@ -240,3 +240,14 @@ bar {
 }
 
 include /etc/sway/config.d/*
+
+### Apps auto-run
+assign [app_id="firefox"] workspace $wsWeb
+assign [app_id="org.keepassxc.KeePassXC"] workspace $wsPersonal
+assign [app_id="org.telegram.desktop"] workspace $wsPersonal
+assign [app_id="foot"] workspace $wsTerminal
+
+exec firefox
+exec keepassxc
+exec Telegram
+exec foot
