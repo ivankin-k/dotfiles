@@ -123,21 +123,21 @@ exec swayidle -w \
 # Workspaces:
 #
     # Name workspaces
-    set $wsWeb      "1:Web"
-    set $wsPersonal "2:Personal"
-    set $wsTerminal "4:Terminal"
-    set $wsDev      "5:Dev"
+    set $wsWeb      "1:Web 🌍"
+    set $wsPrivate  "2:Private 🔒"
+    set $wsTerminal "4:Terminal 🖥️"
+    set $wsDev      "5:Dev 🪛"
 
     
     # Place workspaces
     workspace $wsWeb      output DP-1
-    workspace $wsPersonal output DP-1
+    workspace $wsPrivate  output DP-1
     workspace $wsTerminal output HDMI-A-2
     workspace $wsDev      output HDMI-A-2
 
     # Switch to workspace
     bindsym $mod+KP_1 workspace $wsWeb
-    bindsym $mod+KP_2 workspace $wsPersonal
+    bindsym $mod+KP_2 workspace $wsPrivate
     bindsym $mod+KP_4 workspace $wsTerminal
     bindsym $mod+KP_5 workspace $wsDev
     #bindsym $mod+3 workspace number 3
@@ -145,7 +145,7 @@ exec swayidle -w \
     
     # Move focused container to workspace
     bindsym $mod+Shift+KP_End move container to workspace $wsWeb
-    bindsym $mod+Shift+KP_Down move container to workspace $wsPersonal
+    bindsym $mod+Shift+KP_Down move container to workspace $wsPrivate
     bindsym $mod+Shift+KP_Left move container to workspace $wsTerminal
     bindsym $mod+Shift+KP_Begin move container to workspace $wsDev
     #bindsym $mod+Shift+3 move container to workspace number 3
@@ -256,8 +256,8 @@ include /etc/sway/config.d/*
 
 ### Apps auto-run
 assign [app_id="firefox"] workspace $wsWeb
-assign [app_id="org.keepassxc.KeePassXC"] workspace $wsPersonal
-assign [app_id="org.telegram.desktop"] workspace $wsPersonal
+assign [app_id="org.keepassxc.KeePassXC"] workspace $wsPrivate
+assign [app_id="org.telegram.desktop"] workspace $wsPrivate
 assign [app_id="foot"] workspace $wsTerminal
 
 exec firefox
