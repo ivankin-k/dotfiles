@@ -21,7 +21,8 @@ set $menu wmenu-run
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /usr/share/backgrounds/captaincacao/WallpaperDog-10872696.jpg fill
 #
 # Example configuration:
 #
@@ -53,9 +54,11 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #       middle_emulation enabled
 #   }
 #
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
+   input type:keyboard {
+       xkb_layout "us,ru"
+       xkb_options "grp:alt_shift_toggle"
+       xkb_numlock enabled
+   }
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
@@ -112,28 +115,35 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Workspaces:
 #
+    # Name workspaces
+    set $ws1 "1:Web"
+    set $ws2 "2:Personal"
+    set $ws4 "4:Terminal"
+    set $ws5 "5:Dev"
+
+    
+    # Place workspaces
+    workspace $ws1 output DP-1
+    workspace $ws2 output DP-1
+    workspace $ws4 output HDMI-A-2
+    workspace $ws5 output HDMI-A-2
+
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+KP_1 workspace $ws1
+    bindsym $mod+KP_2 workspace $ws2
+    bindsym $mod+KP_4 workspace $ws4
+    bindsym $mod+KP_5 workspace $ws5
+    #bindsym $mod+3 workspace number 3
+    #bindsym $mod+4 workspace number 4
+    
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
+    bindsym $mod+Shift+KP_End move container to workspace $ws1
+    bindsym $mod+Shift+KP_Down move container to workspace $ws2
+    bindsym $mod+Shift+KP_Left move container to workspace $ws4
+    bindsym $mod+Shift+KP_Begin move container to workspace $ws5
+    #bindsym $mod+Shift+3 move container to workspace number 3
+    #bindsym $mod+Shift+4 move container to workspace number 4
+    
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -220,7 +230,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command while date +'%c'; do sleep 1; done
 
     colors {
         statusline #ffffff
@@ -230,8 +240,3 @@ bar {
 }
 
 include /etc/sway/config.d/*
-
-set $ws1 "1:Web"
-
-bindsym $mod+1 workspace $ws1
-
