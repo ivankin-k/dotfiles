@@ -11,22 +11,10 @@ printf '%s' '
 | sed '1d'
 print -n -P '%f'
 
-# Use powerline
-USE_POWERLINE="true"
-
-# Has weird character width
-# Example:
-#    is not a diamond
-HAS_WIDECHARS="false"
-
-# Source manjaro-zsh-configuration
-if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-  source /usr/share/zsh/manjaro-zsh-config
-fi
-# Use manjaro zsh prompt
-if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-  source /usr/share/zsh/manjaro-zsh-prompt
-fi
+# Prompt
+PROMPT='%F{cyan}%n%f@%F{green}%m%f %F{blue}%~%f %# '
+setopt COMPLETE_ALIASES
+setopt AUTO_CD
 
 # Aliases
 alias l='eza -aagl --time-style "+%H:%M %d %b %Y"'
@@ -39,10 +27,6 @@ SAVEHIST=10000 # The maximum number of history events to save in the history fil
 
 # Go path
 [[ -d /usr/local/go/bin ]] && export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
-
-# Prompt
-setopt COMPLETE_ALIASES
-setopt AUTO_CD
 
 # Binds
 bindkey '^[[H' beginning-of-line # Home
