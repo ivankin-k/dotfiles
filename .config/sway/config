@@ -7,7 +7,7 @@
 ### Variables
 #
 # Wallpapers
-set $wp "/usr/share/backgrounds/captaincacao/WallpaperDog-10872696.jpg"
+set $wp "/usr/share/backgrounds/cacao/WallpaperDog-10872696.jpg"
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -24,7 +24,16 @@ set $menu wmenu-run
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg $wp fill
+
+output DP-1 {
+    position 0 0
+    bg $wp fill
+}
+output HDMI-A-2 {
+    position 1920 0
+    bg $wp fill
+}
+
 #
 # Example configuration:
 #

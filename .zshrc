@@ -34,6 +34,8 @@ alias pacman='pacman --color auto'
 
 # History
 HISTFILE=~/.zhistory
+HISTSIZE=10000 # The maximum number of events stored in the internal history list.
+SAVEHIST=10000 # The maximum number of history events to save in the history file. 
 
 # Go path
 [[ -d /usr/local/go/bin ]] && export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
@@ -41,3 +43,10 @@ HISTFILE=~/.zhistory
 # Prompt
 setopt COMPLETE_ALIASES
 setopt AUTO_CD
+
+# Binds
+bindkey '^[[H' beginning-of-line # Home
+bindkey '^[[F' end-of-line       # End
+bindkey '^[[3~' delete-char      # Delete
+bindkey "^[[1;5C" forward-word   # Ctrl+Left
+bindkey "^[[1;5D" backward-word  # Ctrl+Right
