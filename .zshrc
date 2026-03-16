@@ -11,6 +11,11 @@ printf '%s' '
 | sed '1d'
 print -n -P '%f'
 
+# Autocomplete
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+
 # Prompt
 PROMPT='%F{cyan}%n%f@%F{green}%m%f %F{blue}%~%f %# '
 setopt COMPLETE_ALIASES
