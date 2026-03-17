@@ -8,6 +8,12 @@
 #
 # Wallpapers
 set $wp "/usr/share/backgrounds/cacao/WallpaperDog-10872696.jpg"
+#set $wp "/usr/share/backgrounds/cacao/listya_rastenie_zelenyj_118405_1920x1080.jpg"
+#set $wp "/usr/share/backgrounds/cacao/paporotnik_listia_zelenyj_123899_1920x1080.jpg"
+#set $wp "/usr/share/backgrounds/cacao/huang-siyao-busstop11.jpg"
+#set $wp "/usr/share/backgrounds/cacao/902437.jpg"
+#set $wp "/usr/share/backgrounds/cacao/5405_3d_space_scene_hd_wallpapers.jpg"
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
@@ -241,7 +247,7 @@ bindsym $mod+r mode "resize"
 # Other:
 #
     # Lock session
-    bindsym $mod+l exec swaylock -c 000000 -i $wp
+    bindsym $mod+l exec swaylock -f -c 000000 -i $wp
 
 #
 # Status Bar:
@@ -275,3 +281,7 @@ exec firefox
 exec keepassxc
 exec Telegram
 exec foot
+
+### Windows / Gaps
+#gaps outer 10
+gaps inner 10
