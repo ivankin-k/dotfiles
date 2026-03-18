@@ -254,18 +254,20 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    #position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     #status_command while date +'%c'; do sleep 1; done
-    status_command while date +'%T   %d %b (%a) %Y'; do sleep 1; done
+    
+    #status_command while date +'%T   %d %b (%a) %Y'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #32323200
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    #colors {
+    #    statusline #ffffff
+    #    background #32323200
+    #    inactive_workspace #32323200 #32323200 #5c5c5c
+    #}
+    swaybar_command waybar
 }
 
 include /etc/sway/config.d/*
@@ -282,6 +284,9 @@ exec keepassxc
 exec Telegram
 exec foot
 
-### Windows / Gaps
+### Windows
 #gaps outer 10
 gaps inner 10
+# disable windows titles
+default_border pixel 2
+
