@@ -25,7 +25,7 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr '?U'
 zstyle ':vcs_info:git:*' stagedstr '+S'
-zstyle ':vcs_info:git:*' formats '%F{087}[⎇ %b]%f%F{red}%u%f%F{cyan}%c%f '
+zstyle ':vcs_info:git:*' formats '%F{190}[⎇ %b]%f%F{red}%u%f%F{cyan}%c%f '
 
 # Prompt
 setopt PROMPT_SUBST
