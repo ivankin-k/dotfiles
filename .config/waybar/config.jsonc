@@ -34,22 +34,21 @@
         //"custom/power"
     ],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        //"all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "Web": "",
+            "Private": "",
+            "Terminal": "",
+            "Dev": ""
+            // "urgent": "",
+            // "focused": "",
+            // "default": ""
+        }
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -112,8 +111,9 @@
     },
     "clock": {
         // "timezone": "America/New_York",
+        "format": "{:%H:%M, %A %d %b %Y}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        // "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
         "format": "{usage}% ",

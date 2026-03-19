@@ -138,10 +138,10 @@ exec swayidle -w \
 # Workspaces:
 #
     # Name workspaces
-    set $wsWeb      "1:Web 🌍"
-    set $wsPrivate  "2:Private 🔒"
-    set $wsTerminal "4:Terminal 🖥️"
-    set $wsDev      "5:Dev 🪛"
+    set $wsWeb      "Web"
+    set $wsPrivate  "Private"
+    set $wsTerminal "Terminal"
+    set $wsDev      "Dev"
 
     
     # Place workspaces
