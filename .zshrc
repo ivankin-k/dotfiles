@@ -1,5 +1,8 @@
+# Color pick
+# for code in {000..255}; do print -P -- "$code: %F{$code}Color%f"; done
+
 # Greet
-print -n -P '%F{cyan}'
+print -n -P '%F{105}'
 printf '%s' '
                        __        _                                     
      _________ _____  / /_____ _(_)___      _________ __________ _____ 
@@ -16,8 +19,17 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 
+# VCS info
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' check-for-changes true
+#zstyle ':vcs_info:git:*' unstagedstr 'U'
+#zstyle ':vcs_info:git:*' stagedstr 'S'
+zstyle ':vcs_info:git:*' formats '%F{087}[⎇ %b]%f %F{red}%u%f%F{cyan}%c%f '
+
 # Prompt
-PROMPT='%F{cyan}%n%f@%F{green}%m%f %F{blue}%~%f %# '
+setopt PROMPT_SUBST
+PROMPT='%F{111}%n%f%F{110}@%m%f %F{229}%~%f ${vcs_info_msg_0_}%F{229}%#%f '
 setopt COMPLETE_ALIASES
 setopt AUTO_CD
 
