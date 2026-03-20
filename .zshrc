@@ -2,7 +2,7 @@
 # for code in {000..255}; do print -P -- "$code: %F{$code}Color%f"; done
 
 # Greet
-print -n -P '%F{cyan}'
+print -n -P '%F{111}'
 printf '%s' '
                        __        _                                     
      _________ _____  / /_____ _(_)___      _________ __________ _____ 
@@ -25,11 +25,11 @@ precmd() { vcs_info }
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr '?U'
 zstyle ':vcs_info:git:*' stagedstr '+S'
-zstyle ':vcs_info:git:*' formats '%F{190}[⎇ %b]%f%F{red}%u%f%F{cyan}%c%f '
+zstyle ':vcs_info:git:*' formats '%F{190}[⎇ %b%F{red}%u%f%F{cyan}%c%f]%f '
 
 # Prompt
 setopt PROMPT_SUBST
-PROMPT='%F{111}%n%f%F{110}@%m%f %F{229}%~%f ${vcs_info_msg_0_}%F{229}%#%f '
+PROMPT='%F{111}%n%f%F{110}@%k%F{109}%m%f %F{229}%~%f ${vcs_info_msg_0_}%F{229}%#%f '
 setopt COMPLETE_ALIASES
 setopt AUTO_CD
 
